@@ -1,0 +1,27 @@
+{
+  "Version": "0.0.0",
+  "ReleaseTag": "Sample Tag: Initial Module Template",
+  "Name": "_Module.Template",
+  "Psm1": "_Module.Template.psm1",
+  "Psd1": "_Module.Template.psd1",
+  "Conf": "_Module.Template.json",
+  "Ps1xml": "_Module.Template.Format.ps1xml",
+  "ArchiveFileName": "_Module.Template.zip",
+  "Description": "DESCRIPTION_OF_MODULE",
+  "CompanyName": "COMPANY_NAME__TEAM",
+  "Copyright": "COPYRIGHT_DESCRIPTION.",
+  "Author": "Firstname Lastname",
+  "PowerShellVersion": "5.0",
+  "RequiredModules": [],
+  "Tags": [
+    "TAG1",
+    "TAG2",
+    "TAG3",
+    "Automation",
+    "Administration",
+    "Admin",
+    "Security"
+  ],
+  "ProjectUri": "https://github.com/Example-Tool/Example-Tool",
+  "Assemblies": []
+}
