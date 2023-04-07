@@ -3,7 +3,7 @@ Function Get-InputCredential {
     <#
     .SYNOPSIS
         Gets the necessary information to save an API Credential to the configuration directory of
-        _MODULE_APPLICATION.Tools.
+        _Module.Template.
         Prompts to overwrite if the credential exists.
     .PARAMETER AppId
         The object identifier for an application from MTMP.Config.Input (example: "ThirdParty_AppId1")
@@ -38,7 +38,7 @@ Function Get-InputCredential {
         [switch] $UserCredential = $false
     )
 
-    # PaloAlto.ApiKey.key
+    # _MODULE_APPLICATION.ApiKey.key
     # Load module information
     $InstallerInfo = Get-MtmpInstallerInfo
     $ModuleInfo = $InstallerInfo.ModuleInfo
