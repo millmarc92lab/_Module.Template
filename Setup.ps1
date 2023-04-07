@@ -94,27 +94,22 @@ $ModuleInfo = Get-Content -Path "$PSScriptRoot\ModuleInfo.json" | ConvertFrom-Js
 #endregion
 
 
-#region: STOP - Banner Time.                                                                       
+#region: Banner                                                                       
 <##>
 $ReleaseTagLength = ($ModuleInfo.ReleaseTag).Length
 $s = ""
 for ($i = 0; $i -lt $ReleaseTagLength; $i++) {
     $s += "_"
 }
-Write-Host "888                       8888888b.  888               888    888                       88888888888                888"
-Write-Host "888                       888   Y88b 888               888    888                           888                    888"
-Write-Host "888                       888    888 888               888    888                           888                    888"
-Write-Host "888      .d88b.   .d88b.  888   d88P 88888b.  888  888 888888 88888b.  88888b.d88b.         888   .d88b.   .d88b.  888 .d8888b"
-Write-Host "888     d88`"`"88b d88P`"88b 8888888P`"  888 `"88b 888  888 888    888 `"88b 888 `"888 `"88b        888  d88`"`"88b d88`"`"88b 888 88K"
-Write-Host "888     888  888 888  888 888 T88b   888  888 888  888 888    888  888 888  888  888        888  888  888 888  888 888 `"Y8888b."
-Write-Host "888     Y88..88P Y88b 888 888  T88b  888  888 Y88b 888 Y88b.  888  888 888  888  888 d8b    888  Y88..88P Y88..88P 888      X88"
-Write-Host "88888888 `"Y88P`"   `"Y88888 888   T88b 888  888  `"Y88888  `"Y888 888  888 888  888  888 Y8P    888   `"Y88P`"   `"Y88P`"  888  88888P'"
-Write-Host "                      888        _______           888        $s"
-Write-Host "                 Y8b d88P        " -NoNewline
+Write-Host "                          _         _           _                            _         _"
+Write-Host "    _ __ ___    ___    __| | _   _ | |  ___    | |_   ___  _ __ ___   _ __  | |  __ _ | |_   ___"
+Write-Host "   | '_ `` _ \  / _ \  / _`` || | | || | / _ \   | __| / _ \| '_ `` _ \ | '_ \ | | / _`` || __| / _ \"
+Write-Host "   | | | | | || (_) || (_| || |_| || ||  __/ _ | |_ |  __/| | | | | || |_) || || (_| || |_ |  __/"
+Write-Host "   |_| |_| |_| \___/  \__,_| \__,_||_| \___|(_) \__| \___||_| |_| |_|| .__/ |_| \__,_| \__| \___|"
+Write-Host "                                                                     |_|"
+Write-Host "        $s"
 Write-Host "v $($ModuleInfo.Version)      " -NoNewline -ForegroundColor Cyan
-Write-Host "Y8b d88P        " -NoNewline
 Write-Host "$($ModuleInfo.ReleaseTag)" -ForegroundColor Magenta
-Write-Host "                  `"Y88P`"                       `"Y88P`"`n"
 #endregion
 
 
