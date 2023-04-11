@@ -6,7 +6,7 @@ To Create a new module, cloned from the Module Template
 Clone from the _Module.Template Directory, replace filenames and keywords with new names and keywords
 #>
 
-<##>
+<##
 #Initial Variables for Testing, skip prompts
 $ModuleName = 'StealthwatchCloud.Tools'
 $ModulePrefix = 'Swct'
@@ -19,12 +19,28 @@ $ModuleAuthor = 'Marcus Millender'
 $ModuleDescription = 'Powershell module for use in Stealthwatch Cloud Automation'
 $ModuleTeamName = 'Security Team'
 $ModuleCopyright = 'No Copyright'
-
 <##>
+
+<##
+#Initial Variables for Testing, skip prompts
+$ModuleName = 'LogRhythm.Tools.Custom'
+$ModulePrefix = 'LrtC'
+$ModuleApplication = 'LogRhythm'
+$TargetConsole = 'LogRhythm Platform Manager'
+#$ModuleVersion = Read-Host "Enter the initial version of the Module (0.0.0)"
+    $ModuleVersion = '0.0.2'
+$ModuleReleaseTag = 'Initial LogRhythm.Tools.Custom Module'
+$ModuleAuthor = 'Marcus Millender'
+$ModuleDescription = 'Custom Powershell module for use in LogRhythm Automation'
+$ModuleTeamName = 'Security Team'
+$ModuleCopyright = 'No Copyright'
+$Generated_Date = (get-date).toString("MM/dd/yyyy")
+<##>
+
 
 #region: Initialize Variables
 # Populate Prompts
-<#
+<##>
 $ModuleName = Read-Host "Enter the name of the Module (ex: PaloAlto.Tools)"
 $ModulePrefix = Read-Host "Enter a two - four letter prefix to identify the module. (ex: Pat)"
 $ModuleApplication = Read-Host "Enter the name of the Application, without spaces. (PaloAlto)"
@@ -38,7 +54,9 @@ $ModuleTeamName = Read-Host 'Enter the name of the Team or Company that authored
 $ModuleCopyright = Read-Host 'Enter the copyright string. (ex: (c) Palo Alto Team, All rights reserved.)'
 #>
 
+<##
 "_Module.Template", "$ModuleName" -replace "MTMP", "$ModulePrefix" -replace "_MODULE_APPLICATION", "$ModuleApplication" -replace "_MODULE_TEMPLATE_CONSOLE", "$TargetConsole"
+<##>
 
 #Template Values
 $ModuleName_template = '_Module.Template'
@@ -52,14 +70,27 @@ $ModuleAuthor_template = '_Firstname_Lastname'
 $ModuleDescription_template = 'DESCRIPTION_OF_MODULE'
 $ModuleTeamName_template = 'COMPANY_NAME__TEAM'
 $ModuleCopyright_template = 'COPYRIGHT_DESCRIPTION'
+$Generated_Date_template = '_GENERATED_DATE'
 
 
-$Home_Dir = ".\Installer_Template"
+if ($Env:OneDrive) { 
+    $Home_Dir = "$Env:OneDrive\Powershell\Modules-Packaged-Custom\_Module.Template"
+    $New_Home_Dir = "$Env:OneDrive\Powershell\Modules-Packaged-Custom"
+}
+else { 
+    $Home_Dir = "$Env:USERPROFILE\Powershell\Modules-Packaged-Custom\_Module.Template"
+    $New_Home_Dir = "$Env:USERPROFILE\Powershell\Modules-Packaged-Custom"
+}
 $Local_Dir = "."
-$ModuleTemplateName = '_Module.Template-0.0.0'
-$ModuleTemplateDir = @($Home_Dir,$ModuleTemplateName) -join "\"
+$ModuleTemplateName = '_Module.Template'
+$ModuleTemplateDir = @($Home_Dir,$ModuleTemplateName,'Installer_Template') -join "\"
 <##>
-$NewModuleDir = @($Home_Dir,$ModuleName) -join "\"
+$ModuleDirectory = @{
+    "System" = "C:\Program Files\WindowsPowerShell\Modules\LogRhythm.Tools";
+    "Local" =  "$env:LOCALAPPDATA\LogRhythm.Tools"
+}
+
+$NewModuleDir = @($New_Home_Dir,$ModuleName) -join "\"
 #Array
 $TemplateReplaceStrings = @(
 @($ModuleName_template, $ModuleName),
@@ -71,7 +102,8 @@ $TemplateReplaceStrings = @(
 @($ModuleAuthor_template, $ModuleAuthor),
 @($ModuleDescription_template, $ModuleDescription),
 @($ModuleTeamName_template, $ModuleTeamName),
-@($ModuleCopyright_template, $ModuleCopyright)
+@($ModuleCopyright_template, $ModuleCopyright),
+@($Generated_Date_template, $Generated_Date)
 )
 
 #PSObject

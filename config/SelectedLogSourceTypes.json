@@ -1,0 +1,18 @@
+{
+	"SelectedLogSources" : [
+		{ "id" : "1000562", "name" : "MS Windows Event Logging XML - Application", 		"title" : "WinEvtXML - App",		"filePath" : ":Application"	},
+		{ "id" : "1000627", "name" : "MS Windows Event Logging - PowerShell", 			"title" : "MS PowerShell",			"filePath" : ":Windows PowerShell"	},
+		{ "id" : "1000639", "name" : "MS Windows Event Logging XML - Security", 		"title" : "WinEvtXML - Security", 	"filePath" : ":Security"	},
+		{ "id" : "1000662", "name" : "MS Windows Event Logging XML - System", 			"title" : "WinEvtXML - Sys", 		"filePath" : ":System "	},
+		{ "id" : "1000745", "name" : "MS Windows Event Logging XML - Sysmon 8/9/10", 	"title" : "WinEvtXML - Sysmon", 	"filePath" : ":Microsoft-Windows-Sysmon/Operational"	}
+	],
+	
+	"DefaultLogSources" : [
+		{ "id" : "3", 		"name" : "LogRhythm File Monitor (Windows)", 				"title" : "", "filePath" : ""	},
+		{ "id" : "1000044", "name" : "LogRhythm Data Loss Defender", 					"title" : "", "filePath" : ""	},
+		{ "id" : "1000059", "name" : "LogRhythm User Activity Monitor (Windows)", 		"title" : "", "filePath" : ""	},
+		{ "id" : "1000158", "name" : "LogRhythm Process Monitor (Windows)", 			"title" : "", "filePath" : ""	},
+		{ "id" : "1000162", "name" : "LogRhythm Network Connection Monitor (Windows)", 	"title" : "", "filePath" : ""	},
+		{ "id" : "1000539", "name" : "LogRhythm Registry Integrity Monitor", 			"title" : "", "filePath" : ""	}
+	]
+}

@@ -1,0 +1,19 @@
+{
+	"Hostname" : {
+		"Promt": "Example Promt 1",
+		"Hint" : "Hint 1",
+		"Command": "Get-Command"
+	},
+	
+	"IP" : {
+		"Promt": "Example Promt 2",
+		"Hint" : "Hint 2",
+		"Command": "Get-Command"
+	},
+	
+	"Port" : {
+		"Promt": "Example Promt 1",
+		"Hint" : "Hint 1",
+		"Command": "Get-Command"
+	}
+}
